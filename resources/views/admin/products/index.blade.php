@@ -3,11 +3,17 @@
 @section('title', 'Carousel')
 
 @section('content')
+@if(count($products) == 0)
+<div class="alert alert-warning">
+    <strong>Sorry!</strong> No Product Found.
+</div>                                      
+@else
 <div class="project-list">
         <table class="table table-hover">
+           
             @foreach($products as $product)
             <tr>
-            <td class="project-title"><a href="">{{$product->lang->title}}</a></td>
+            <td class="project-title"><a href="">{{$product->id}}</a></td>
                 <td class="project-actions">  
                 
                 <form action="{{route('product.destroy',$product->id)}}" method="POST">
@@ -20,6 +26,8 @@
             </tr>
             @endforeach
             
+            
         </table>
-        </div> 
+        </div>
+        @endif
 @endsection

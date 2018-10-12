@@ -22,6 +22,11 @@
                         </ul>
                     </div>
                 @endif
+                @if(session()->has('success'))
+                <div class="alert alert-success"> 
+                {!! session('success') !!}
+                </div>
+                @endif
              
                 <div role="tabpanel" id="tab-1" class="tab-pane active">
                     <div class="panel-body">

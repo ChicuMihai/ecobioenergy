@@ -46,25 +46,25 @@
                                     <div class="panel-body">
                                       <div class="tab-content">
                                         <div id="title-RO" class="tab-pane active">
-                                            <input type="text" class="form-control" name="title[ro]" id="title" required>
+                                            <input type="text" class="form-control" name="title[ro]" id="title-ro" required>
                                         </div>
                                   
                                         <div id="title-RU" class="tab-pane">
-                                                <input type="text" class="form-control" name="title[ru]" id="title" required>
+                                                <input type="text" class="form-control" name="title[ru]" id="title-ru" required>
                                   
                                        </div>
                                   
                                        <div id="title-EN" class="tab-pane">
-                                            <input type="text" class="form-control" name="title[en]" id="title" required>
+                                            <input type="text" class="form-control" name="title[en]" id="title-en" required>
                                   
                                        </div>
                                   
                                        <div id="title-DE" class="tab-pane">
-                                            <input type="text" class="form-control" name="title[de]" id="title" required>
+                                            <input type="text" class="form-control" name="title[de]" id="title-de" required>
                                       </div>
                                   
                                       <div id="title-IT" class="tab-pane">
-                                            <input type="text" class="form-control" name="title[it]" id="title" required>
+                                            <input type="text" class="form-control" name="title[it]" id="title-it" required>
                                      </div>
                                    </div>
                         </div>
@@ -74,7 +74,7 @@
                     <div class="panel-body">
                             <div class="custom-file">
                                     <h3>Imaginea</h3>
-                                    <input type="file" class="form-control-file" name="img" id="image">
+                                    <input type="file" class="form-control-file" name="img" id="image" required>
                                     <label for="image" class="custom-file-label">Choose file...</label>
                             </div> 
                     </div>
@@ -95,26 +95,26 @@
                                 <div class="panel-body">
                                   <div class="tab-content">
                                     <div id="tab-RO" class="tab-pane active">
-                                      <textarea class="form-control my-editor" name="description[ro]" id="content">{{ old('content') }}</textarea>
+                                      <textarea class="form-control my-editor" name="description[ro]" id="description-ro">{{ old('content') }}</textarea>
                               
                                     </div>
                               
                                     <div id="tab-RU" class="tab-pane">
-                                     <textarea class="form-control my-editor" name="description[ru]" id="content">{{ old('content') }}</textarea>
+                                     <textarea class="form-control my-editor" name="description[ru]" id="description-ru">{{ old('content') }}</textarea>
                               
                                    </div>
                               
                                    <div id="tab-EN" class="tab-pane">
-                                     <textarea class="form-control my-editor" name="description[en]" id="content">{{ old('content') }}</textarea>
+                                     <textarea class="form-control my-editor" name="description[en]" id="description-en">{{ old('content') }}</textarea>
                               
                                    </div>
                               
                                    <div id="tab-DE" class="tab-pane">
-                                    <textarea class="form-control my-editor" name="description[de]" id="content">{{ old('content') }}</textarea>
+                                    <textarea class="form-control my-editor" name="description[de]" id="description-de">{{ old('content') }}</textarea>
                                   </div>
                               
                                   <div id="tab-IT" class="tab-pane">
-                                   <textarea class="form-control my-editor" name="description[it]" id="content">{{ old('content') }}</textarea>
+                                   <textarea class="form-control my-editor" name="description[it]" id="description-it">{{ old('content') }}</textarea>
                               
                                  </div>
                                </div>
@@ -136,5 +136,4 @@
         </div>
     </form> 
     </div>
-
 @endsection

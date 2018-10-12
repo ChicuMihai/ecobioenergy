@@ -3,7 +3,11 @@
 @section('title', 'Carousel')
 
 @section('content')
-
+@if(count($slides) == 0)
+<div class="alert alert-warning">
+    <strong>Sorry!</strong> No Slides Found.
+</div>                                      
+@else
  <div class="project-list">
     <table class="table table-hover">
         @foreach($slides as $slide)
@@ -22,5 +26,6 @@
         @endforeach
         
     </table>
-    </div> 
+    </div>
+    @endif 
 @endsection

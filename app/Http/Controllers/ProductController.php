@@ -150,12 +150,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $carousel=Product::find($id);
-        $carousel_translation=ProductTranslation::where('product_id',$id);
-        $carousel_translation->delete();
+        $product=Product::find($id);
+        $product_translation=ProductTranslation::where('product_id',$id);
+        $product_translation->delete();
         $path = public_path('/products' . '/' . $product->image);
         \File::delete($path);
-        $carousel->delete();
+        $product->delete();
         return back();
     }
 }

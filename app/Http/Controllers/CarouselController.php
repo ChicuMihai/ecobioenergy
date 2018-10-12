@@ -71,6 +71,7 @@ class CarouselController extends Controller
 
         }
     
+        Session::flash('success','Slide-ul a fost adaugat cu success');
         return redirect()->back();
     
 

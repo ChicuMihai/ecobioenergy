@@ -33,6 +33,10 @@ class FrontController extends Controller
     public function calcKcal(){
         return view('/pages/calcKcal');
     }
+    public function productinfo()
+    {
+        return view ('pages.productinfo');
+    }
 
     
 }

@@ -30,7 +30,7 @@ Produse
         <li class="">
           <div class="wd-project hvr-underline-from-center">
             <img src="images/slide_3-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image" alt="slide_3"
-                 width="380" height="254"> <a href="#"><h4>Swedish Mega Project</h4></a>
+                 width="380" height="254"> <a href="{{route('productinfo')}}"><h4>Swedish Mega Project</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
           </div>
@@ -39,7 +39,7 @@ Produse
         <li class="">
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_5-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
-                 alt="project_5" width="380" height="254"> <a href="#"><h4>So to deliberately render</h4></a>
+                 alt="project_5" width="380" height="254"> <a href="{{route('productinfo')}}"><h4>So to deliberately render</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
           </div>
@@ -48,7 +48,7 @@ Produse
         <li class="">
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_6-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
-                 alt="project_6" width="380" height="254"> <a href="#"><h4>Frozen Trees In A Lake</h4></a>
+                 alt="project_6" width="380" height="254"> <a href="{{route('productinfo')}}"><h4>Frozen Trees In A Lake</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
           </div>
@@ -58,7 +58,7 @@ Produse
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_7-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_7" width="380" height="254"> <a
-            href="#"><h4>Consectetur
+            href="{{route('productinfo')}}"><h4>Consectetur
             adipiscing</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
@@ -69,7 +69,7 @@ Produse
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_8-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_8" width="380" height="254"> <a
-            href="#"><h4>Consectetur
+            href="{{route('productinfo')}}"><h4>Consectetur
             adipiscing</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
@@ -80,7 +80,7 @@ Produse
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_9-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_9" width="380" height="254"> <a
-            href="#"><h4>Consectetur
+            href="{{route('productinfo')}}"><h4>Consectetur
             adipiscing</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
@@ -91,7 +91,7 @@ Produse
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_10-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_10" width="380" height="254"> <a
-            href="#"><h4>Consectetur
+            href="{{route('productinfo')}}"><h4>Consectetur
             adipiscing</h4></a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
@@ -102,7 +102,7 @@ Produse
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_11-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_11" width="380" height="254"> <a
-            href="#"><h4>Consectetur adipiscing</h4>
+            href="{{route('productinfo')}}"><h4>Consectetur adipiscing</h4>
           </a>
 
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
