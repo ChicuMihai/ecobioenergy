@@ -10,7 +10,7 @@
             <td class="project-title"><a href="">{{$product->lang->title}}</a></td>
                 <td class="project-actions">  
                 
-                <form action="{{route('carousel.destroy',$product->id)}}" method="POST">
+                <form action="{{route('product.destroy',$product->id)}}" method="POST">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="DELETE">
                 <a href="{{route('product.edit',$product->id)}}" class="btn btn-info "><i class="fa fa-paste"></i> Edit</a>

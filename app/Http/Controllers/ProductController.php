@@ -96,7 +96,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=Product::find($id);
+        $product_translation=ProductTranslation::where('product_id',$id)->orderBy('id','asc')->get();
+        return view('admin.products.edit',compact('product','product_translation'));
     }
 
     /**
@@ -108,7 +110,36 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'img' => 'required|image',
+            'description.*'=>'required',
+            'title.*'=>'required'
+            
+        ]);
+        if($validator->fails()){  
+            return redirect()->back()->withErrors($validator);
+            }
+        else 
+        
+        $product=Product::findOrFail($id);
+        foreach($request['description'] as $lang => $content) {
+            $translation=ProductTranslation::find($lang);
+            $translation->description=$content;
+            $translation->title=$request['title'][$lang];
+            $translation->update();
+         }
+
+        $path = public_path('/products' . '/' . $product->image);
+        \File::delete($path);
+        $image = request()->file('img');
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+        $destinationPath = public_path('/slides');
+        $image->move($destinationPath, $filename);
+        $product->image=$filename;
+        $product->update();
+         Session::flash('message', 'Produsul a fost actualizat cu success');  
+         return redirect()->back();
+        
     }
 
     /**
@@ -119,6 +150,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $carousel=Product::find($id);
+        $carousel_translation=ProductTranslation::where('product_id',$id);
+        $carousel_translation->delete();
+        $path = public_path('/products' . '/' . $product->image);
+        \File::delete($path);
+        $carousel->delete();
+        return back();
     }
 }
