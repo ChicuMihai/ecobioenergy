@@ -15,7 +15,7 @@ Despre noi
 				</div>
 			</div>
 		</section>
-		<section><div clas="row">{!!$about->lang->content!!}</div></section>
+		<section><div class="row">{!!$about->lang->content!!}</div></section>
 			
 	
 		{{-- <section class="green_solar">
