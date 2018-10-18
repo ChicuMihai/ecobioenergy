@@ -27,16 +27,20 @@ Produse
 
 
       <ul class="masque portfolio-grid small-block-grid-1	 medium-block-grid-2 large-block-grid-4">
+          @foreach($products as $product)
         <li class="">
+         
+
           <div class="wd-project hvr-underline-from-center">
-            <img src="images/slide_3-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image" alt="slide_3"
-                 width="380" height="254"> <a href="{{route('productinfo')}}"><h4>Swedish Mega Project</h4></a>
+          <img src="{{asset('products/thumbnails/'.$product->image)}}" class="attachment-greenenergy_portfolio wp-post-image" alt="slide_3"
+          width="380" height="254"> <a href="{{url('productinfo/'.$product->id)}}"><h4>{{$product->lang->title}}</h4></a>
 
-            <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
+            {!!$product->lang->description!!}
           </div>
-
+          @endforeach
+{{-- 
         </li>
-        <li class="">
+         <li class="">
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_5-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_5" width="380" height="254"> <a href="{{route('productinfo')}}"><h4>So to deliberately render</h4></a>
@@ -45,7 +49,7 @@ Produse
           </div>
 
         </li>
-        <li class="">
+        {{-- <li class="">
           <div class="wd-project hvr-underline-from-center">
             <img src="images/project_6-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image"
                  alt="project_6" width="380" height="254"> <a href="{{route('productinfo')}}"><h4>Frozen Trees In A Lake</h4></a>
@@ -108,7 +112,7 @@ Produse
             <p> DESIGN<span>- </span> INTERIOR<span>- </span> OFFICE<span>- </span></p>
           </div>
 
-        </li>
+        </li> --}} 
       </ul>
     </div>
   </div>

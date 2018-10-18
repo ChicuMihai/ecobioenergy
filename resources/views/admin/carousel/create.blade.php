@@ -53,26 +53,26 @@
                                 <div class="panel-body">
                                   <div class="tab-content">
                                     <div id="tab-RO" class="tab-pane active">
-                                      <textarea class="form-control my-editor" name="content[ro]" id="content">{{ old('content') }}</textarea>
+                                      <textarea class="form-control" name="content[ro]" id="content">{{ old('content') }}</textarea>
                               
                                     </div>
                               
                                     <div id="tab-RU" class="tab-pane">
-                                     <textarea class="form-control my-editor" name="content[ru]" id="content">{{ old('content') }}</textarea>
+                                     <textarea class="form-control" name="content[ru]" id="content">{{ old('content') }}</textarea>
                               
                                    </div>
                               
                                    <div id="tab-EN" class="tab-pane">
-                                     <textarea class="form-control my-editor" name="content[en]" id="content">{{ old('content') }}</textarea>
+                                     <textarea class="form-control" name="content[en]" id="content">{{ old('content') }}</textarea>
                               
                                    </div>
                               
                                    <div id="tab-DE" class="tab-pane">
-                                    <textarea class="form-control my-editor" name="content[de]" id="content">{{ old('content') }}</textarea>
+                                    <textarea class="form-control" name="content[de]" id="content">{{ old('content') }}</textarea>
                                   </div>
                               
                                   <div id="tab-IT" class="tab-pane">
-                                   <textarea class="form-control my-editor" name="content[it]" id="content">{{ old('content') }}</textarea>
+                                   <textarea class="form-control" name="content[it]" id="content">{{ old('content') }}</textarea>
                               
                                  </div>
                                </div>

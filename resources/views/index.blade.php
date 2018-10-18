@@ -15,7 +15,8 @@ Ecobioenergy
 				<img src="{{asset('slides/'.$slide->image)}}" alt="slide 1"/>
 					<div class="row">
 						<div class="orbit-caption animated " data-animated="fadeInUp">
-							<h4>{!!$slide->lang->content!!}</h4>
+							<p></p>
+							<h3>{!!$slide->lang->content!!}</h3>
 							<a href="#" class="button small">READ MORE</a>
 						</div>
 					</div>
@@ -30,6 +31,7 @@ Ecobioenergy
 					<h5> To mACany clients like government, homes and offices</h5>
 
 				</div>
+				@foreach($products as $product)
 				<div class="large-4 small-12 columns clearfix">
 					<div class="wd-section-blog-services text-center style-3 anim-on">
 						<article class="layout-2  ">
@@ -40,18 +42,18 @@ Ecobioenergy
 									</svg>
 									<div class="img-wrapper">
 
-										<img src="images/blog-post3.jpg" alt="icon">
+									<img src="{{asset('products/thumbnails/'.$product->image)}}" alt="icon">
 									</div>
 								</div>
-								<h4 class="wd-title-element">GOVERNMENT</h4>
-								<p>
-									As the world's largest green and clean egerngy specialist of the printing and typesetting industry. Lorem
-									has been the industry. </p>
+							<a href="{{url('productinfo',$product->id)}}"><h4 class="wd-title-element">{{$product->lang->title}}</h4></a>
+							{{-- {!!$product->lang->description!!} --}}
+								
 							</div>
 						</article>
 					</div>
 				</div>
-				<div class="large-4 small-12 columns">
+				@endforeach
+				{{-- <div class="large-4 small-12 columns">
 					<div class="wd-section-blog-services text-center style-3 anim-on">
 						<article class="layout-2  ">
 							<div class="wd-blog-post nohover">
@@ -92,12 +94,12 @@ Ecobioenergy
 							</div>
 						</article>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</section>
 		
 		
-		<section class="latest_project">
+		{{-- <section class="latest_project">
 			<div class="row">
 				<div class="large-12 columns  wd-title-section_c">
 					<h2>Latest Projects</h2>
@@ -149,7 +151,7 @@ Ecobioenergy
 						class="button small radius" href="#"><i
 							class="fa fa-hand-o-right"></i> MOREE PROJECT</a></div>
 			</div>
-		</section>
+		</section> --}}
 	
 
 @endsection

@@ -9,15 +9,15 @@
 		<title>@yield('title')</title>
 
 
-		<link rel="stylesheet" href="css/app.css">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
-		<link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">
-		<link rel="stylesheet" href="css/inline-style.css">
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/owl.theme.css">
-		<link rel="stylesheet" href="css/owl.transitions.css">
-		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="{!!asset('css/app.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/animate.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/bootstrap-colorpicker.min.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/font-awesome/font-awesome.min.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/inline-style.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/owl.carousel.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/owl.theme.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/owl.transitions.css')!!}">
+		<link rel="stylesheet" href="{!!asset('css/swiper.min.css')!!}">
 		<!-- google fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -27,8 +27,8 @@
 	<body>
 		<header class=" wd-menu3-header ">
 			<div class="show-for-medium-up wd-menu3-logo">
-				<h1><a title="Green energy" rel="home" href="{{url('/') }}"> <img alt="logo"
-																			   src="images/logo-solar-blan.png"></a>
+				<h1><a title="Green energy" rel="home" href="{{url('/') }}">
+					<img alt="logo" src="{{asset('images/logo.png')}}" width="140px"height="45px"></a>
 				</h1>
 			</div>
 			<div class=" wd-menu3-nav">
@@ -40,53 +40,54 @@
 					<section class="top-bar-section">
 						<div class="menu-main-menu-container">
 							<ul id="menu-main-menu" class="menu">
-								<li id="menu-item-1273" class="active_menu">
-									<a href="{{url('/') }}" class="has-icon">Acasă</a>
+								<li id="menu-item-1273" class="{{Request::path() == '/' ? 'active_menu' : '' }}">
+									<a href="{{url('/') }}" class="has-icon">{{ __('home.home') }}</a>
 								</li>
 
-								<li id="menu-item-656" >
-									<a href="{{url('/about') }}" >Despre Companie</a>
+								<li id="menu-item-656" class="{{Request::path() == 'about' ? 'active_menu' : '' }}" >
+									<a href="{{url('/about') }}" >{{ __('home.about') }}</a>
 								</li>
 
-								<li id="menu-item-721" >
-									<a href="{{url('/portfolio') }}">Catalog Produse</a>
+								<li id="menu-item-721" class="{{Request::path() == 'portfolio' ? 'active_menu' : '' }}" >
+									<a href="{{url('/portfolio') }}">{{ __('home.catalog') }}</a>
 								</li>
-								<li id="menu-item-721" >
-									<a href="{{url('/calcKcal') }}">Calculator Kcal</a>
+								<li id="menu-item-721" class="{{Request::path() == 'calcKcal' ? 'active_menu' : '' }}">
+									<a href="{{url('/calcKcal') }}">{{ __('home.calc') }}</a>
 								</li>
-								<li id="menu-item-721" >
-									<a href="{{url('/order') }}">Comenzi</a>
+								<li id="menu-item-721" class="{{Request::path() == 'order' ? 'active_menu' : '' }}">
+									<a href="{{url('/order') }}">{{ __('home.order') }}</a>
 								</li>
-								<li id="menu-item-13">
-									<a href="{{url('/contact') }}" class="has-icon">Contact Us</a>
+								<li id="menu-item-13" class="{{Request::path() == 'contact' ? 'active_menu' : '' }}">
+									<a href="{{url('/contact') }}" class="has-icon">{{ __('home.contact') }}</a>
 								</li>
 							</ul>
 						</div>
 					</section>
 				</nav>
 			</div>
+			
 			<div class="show-for-large-up triongle"></div>
 			<div class="show-for-large-up wd-menu3-social">
 				<ul class="social-icons inline-list">
 					<li>
                     <a href="{{url('lang/ro')}}">
-                    <img src="images/language/rom.png"></a>
+                    <img src="{{asset('images/language/rom.png')}}"></a>
 					</li>
 					<li>
                     <a href="{{url('lang/ru')}}">
-                    <img src="images/language/rus.png"></a>
+                    <img src="{{asset('images/language/rus.png')}}"></a>
 					</li>
 					<li >
 					<a href="{{url('lang/en')}}">
-                    <img src="images/language/uk.png"></a>
+                    <img src="{{asset('images/language/uk.png')}}"></a>
 					</li>
                     <li >
 					<a href="{{url('lang/it')}}">
-                    <img src="images/language/it.png"></a>
+                    <img src="{{asset('images/language/it.png')}}"></a>
 					</li>
                     <li >
 					<a href="{{url('lang/de')}}">
-                    <img src="images/language/de.png"></a>
+                    <img src="{{asset('images/language/de.png')}}"></a>
 					</li>
 				</ul>
 			</div>
@@ -109,7 +110,7 @@
 					<li>
 						<div class="textwidget">
 							<div class="widget-logo">
-								<img alt="logo" src="images/logo-solar-blann.png">
+								<img alt="logo" src="{{asset('images/logo-solar-blann.png')}}">
 								<p>The solar is the leader of green energy in the country sed diam nonumy eirmod tempor invidunt ut labore
 									and efficient strategy.</p>
 								<p>We provide the energy to medium and big company, sadipscing elitr, sed diam nonumy.</p>
@@ -126,16 +127,13 @@
 
 								<ul>
 									<li>
-										<span><span>Phone:</span> +1 123 457 653</span>
+									<span><span>Phone:</span><a href="tel:{{$info->telefon}}">{{$info->telefon}}</a></span>
 									</li>
 									<li>
-										<span><span>Fax:</span> +1 496 457 654</span>
+									<span><span>Email:</span> <a href="mailto:{{$info->email}}"><span>{{$info->email}}</span></a></span>
 									</li>
 									<li>
-										<span><span>Email:</span> <a href="http://themes.webdevia.com/cdn-cgi/l/email-protection#5d38303c34311d2a383f2e342938733e3230"><span class="__cf_email__" data-cfemail="177862653a7a767e7b57726f767a677b723974787a">[email&#160;protected]</span></a></span>
-									</li>
-									<li>
-										<span><span>Adress:</span> 121 King Street, Melbourne 3000 Australia</span>
+									<span><span>Adress:</span>{{$info->adresa}}</span>
 									</li>
 								</ul>
 							</section>
@@ -176,7 +174,7 @@
 			</div>
 		</section>
 
-		<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+		<script src="js/jquery.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		<script src="js/shortcode/script-shortcodes.js"></script>

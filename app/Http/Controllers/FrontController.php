@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Carousel;
 use App\CarouselTranslation;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -11,7 +11,8 @@ class FrontController extends Controller
     public function index ()
     {
         $carousel=Carousel::all();
-        return view('index',compact('carousel'));
+        $products=Product::latest()->paginate(3);
+        return view('index',compact('carousel','products'));
     }
     public function about (){
         /* functie pentru baza de data */
@@ -19,7 +20,8 @@ class FrontController extends Controller
     }
 
     public function portfolio(){
-        return view('/pages/portfolio');
+        $products=Product::get()->all();
+        return view('/pages/portfolio',compact('products'));
     }
     
     public function contact(){
@@ -33,9 +35,10 @@ class FrontController extends Controller
     public function calcKcal(){
         return view('/pages/calcKcal');
     }
-    public function productinfo()
+    public function productinfo($id)
     {
-        return view ('pages.productinfo');
+        $product=Product::find($id);
+        return view ('pages.product',compact('product'));
     }
 
     

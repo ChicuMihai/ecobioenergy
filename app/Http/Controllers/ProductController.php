@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\ProductTranslation;
 use Session;
+use Image;
 
 class ProductController extends Controller
 {
@@ -54,6 +55,10 @@ class ProductController extends Controller
        $filename = time() . '.' . $image->getClientOriginalExtension();
        $destinationPath = public_path('/products');
        $image->move($destinationPath, $filename);
+       if (!file_exists('products/thumbnails')) {
+        mkdir('products/thumbnails', 666, true);
+    }
+       $thumb=Image::make('products/'.$filename)->resize(380,254)->save('products/thumbnails/'.$filename);
        $product=new Product;
        $product->image=$filename;
        $product->price=request('price');
@@ -85,7 +90,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -130,11 +135,14 @@ class ProductController extends Controller
          }
 
         $path = public_path('/products' . '/' . $product->image);
+        $thubm_path=public_path('/products/thumbnails/'.$product->image);
         \File::delete($path);
+        \File::delete($thubm_path);
         $image = request()->file('img');
         $filename = time() . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('/slides');
+        $destinationPath = public_path('/products');
         $image->move($destinationPath, $filename);
+        $thumb=Image::make('products/'.$filename)->resize(380,254)->save('products/thumbnails/'.$filename);
         $product->image=$filename;
         $product->update();
          Session::flash('message', 'Produsul a fost actualizat cu success');  

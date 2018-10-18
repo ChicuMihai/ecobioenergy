@@ -37,7 +37,7 @@
             </li>
 
             <li>
-                <a href="{{ url('/aboutedit') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Despre Noi</span></a>
+                <a href="{{ route('about.create') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Despre Noi</span></a>
             </li>
             <li>
                     <a href="{{ route('contact_edit') }}"><i class="fa fa-address-card-o"></i> <span class="nav-label">Informatii de contact</span></a>

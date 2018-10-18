@@ -61,7 +61,7 @@
                                     </div>
                     <div role="tabpanel" id="tab-2" class="tab-pane">
                         <div class="panel-body">
-                            <img src="{{asset('products/'.$product->image)}}" width="150px">
+                            <img src="{{asset('products/thumbnails/'.$product->image)}}">
                             <div class="card card-body">
                                 <div class="custom-file">
                                     <input type="file" class="form-control-file" name="img" id="image">

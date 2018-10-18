@@ -1,10 +1,7 @@
 @extends('layouts.master')
 
-@section('title')
+@section('title','Product Info')
 
-Product Info
-
-@endsection
 
 @section('content')
 
@@ -22,7 +19,7 @@ Product Info
     <div class="large-12 columns  wd-title-section_c">
     <div class="large-6 columns">
     <div class="wd-project hvr-underline-from-center">
-            <img src="images/slide_3-380x254.jpg" class="attachment-greenenergy_portfolio wp-post-image" alt="slide_3"
+    <img src="{{asset('products/thumbnails/'.$product->image)}}" class="attachment-greenenergy_portfolio wp-post-image" alt="slide_3"
                  width="500" > 
           </div>
     </div>
@@ -31,14 +28,16 @@ Product Info
 <div class="wd-project hvr-underline-from-center">
 Informatii
 <div class="titlu">Titlu</div>
-
+{{$product->lang->title}}
 <div class="Descriere">Descriere</div>
+{!!$product->lang->description!!}
 <div class="Pret">Pret</div>
+{{$product->price}}
 </div>
     </div>
 
     </div>
     </div>
-    </section>
+</section>
 
 @endsection

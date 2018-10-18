@@ -58,7 +58,7 @@
                             @foreach($carousel_translation as $translation)
                         <div id="tab-{{$translation->locale}}" class="tab-pane">
                            
-                            <textarea class="form-control my-editor" name="content[{{$translation->id}}]" id="content"{!!$translation->content!!}</textarea>
+                            <textarea class="form-control" name="content[{{$translation->id}}]" id="content"{!!$translation->content!!}</textarea>
                           </div>
                           @endforeach
                     

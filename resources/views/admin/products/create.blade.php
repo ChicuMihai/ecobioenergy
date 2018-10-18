@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-lg-6">
-    <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data" name="register" onsubmit="return validateForm()" novalidate>
         {{ csrf_field() }}
         <div class="tabs-container">
             <ul class="nav nav-tabs" role="tablist">
@@ -46,25 +46,25 @@
                                     <div class="panel-body">
                                       <div class="tab-content">
                                         <div id="title-RO" class="tab-pane active">
-                                            <input type="text" class="form-control" name="title[ro]" id="title-ro" required>
+                                            <input type="text" class="form-control" name="title[ro]" id="title-ro" required value="{{old('content')}}">
                                         </div>
                                   
                                         <div id="title-RU" class="tab-pane">
-                                                <input type="text" class="form-control" name="title[ru]" id="title-ru" required>
+                                                <input type="text" class="form-control" name="title[ru]" id="title-ru" required value="{{old('content')}}">
                                   
                                        </div>
                                   
                                        <div id="title-EN" class="tab-pane">
-                                            <input type="text" class="form-control" name="title[en]" id="title-en" required>
+                                            <input type="text" class="form-control" name="title[en]" id="title-en" required value="{{old('content')}}">
                                   
                                        </div>
                                   
                                        <div id="title-DE" class="tab-pane">
-                                            <input type="text" class="form-control" name="title[de]" id="title-de" required>
+                                            <input type="text" class="form-control" name="title[de]" id="title-de" required value="{{old('content')}}">
                                       </div>
                                   
                                       <div id="title-IT" class="tab-pane">
-                                            <input type="text" class="form-control" name="title[it]" id="title-it" required>
+                                            <input type="text" class="form-control" name="title[it]" id="title-it" required value="{{old('content')}}">
                                      </div>
                                    </div>
                         </div>
@@ -95,26 +95,26 @@
                                 <div class="panel-body">
                                   <div class="tab-content">
                                     <div id="tab-RO" class="tab-pane active">
-                                      <textarea class="form-control my-editor" name="description[ro]" id="description-ro">{{ old('content') }}</textarea>
+                                      <textarea class="form-control my-editor" name="description[ro]" id="description-ro" required="" >{{ old('content') }}</textarea>
                               
                                     </div>
                               
                                     <div id="tab-RU" class="tab-pane">
-                                     <textarea class="form-control my-editor" name="description[ru]" id="description-ru">{{ old('content') }}</textarea>
+                                     <textarea class="form-control my-editor" name="description[ru]" id="description-ru" required="">{{ old('content') }}</textarea>
                               
                                    </div>
                               
                                    <div id="tab-EN" class="tab-pane">
-                                     <textarea class="form-control my-editor" name="description[en]" id="description-en">{{ old('content') }}</textarea>
+                                     <textarea class="form-control my-editor" name="description[en]" id="description-en" required="">{{ old('content') }}</textarea>
                               
                                    </div>
                               
                                    <div id="tab-DE" class="tab-pane">
-                                    <textarea class="form-control my-editor" name="description[de]" id="description-de">{{ old('content') }}</textarea>
+                                    <textarea class="form-control my-editor" name="description[de]" id="description-de" required="">{{ old('content') }}</textarea>
                                   </div>
                               
                                   <div id="tab-IT" class="tab-pane">
-                                   <textarea class="form-control my-editor" name="description[it]" id="description-it">{{ old('content') }}</textarea>
+                                   <textarea class="form-control my-editor" name="description[it]" id="description-it" required="">{{ old('content') }}</textarea>
                               
                                  </div>
                                </div>
@@ -124,7 +124,7 @@
                         <div class="panel-body">
                                 <div class="custom-title">
                                         <h3>Pret Produs</h3>
-                                        <input type="number" class="form-control" name="price" step=".01" required>
+                                <input type="number" class="form-control" name="price" step=".01" required="" value="{{old('content')}}">
                                 </div> 
                         </div>
                     </div>
@@ -136,4 +136,26 @@
         </div>
     </form> 
     </div>
+    <script>
+    function validateForm()
+    {
+      var fields = ["title","price"]
+      console.log(document.forms["register"]["title"]);
+    
+      var i, l = fields.length;
+      var fieldname;
+      for (i = 0; i < l; i++) {
+        fieldname = fields[i];
+        if (document.forms["register"][fieldname].value === "") {
+          alert(fieldname + " can not be empty");
+          return false;
+        }
+      }
+      return true;
+    }
+                
+             
+    </script>
+
+    
 @endsection

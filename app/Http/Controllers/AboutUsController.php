@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AboutUsPage;
 use App\AboutUsTranslation;
+use Session;
 
 class AboutUsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,8 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        return view('admin.about');
+        $about=AboutUsPage::first();
+        return view('pages.aboutus',compact('about'));
     }
 
     /**
@@ -25,16 +33,11 @@ class AboutUsController extends Controller
      */
     public function create(Request $request)
     {
-        $about=AboutUsPage::create();
-
-        foreach($request['content'] as $lang => $content) { 
-            $translation = new AboutUsTranslation(); 
-            $translation->about_id = $about->id; 
-            $translation->content = $content; 
-            $translation->locale = $lang; 
-            $translation->save(); 
-        }
-
+        $about=AboutUsPage::first();
+        $about_translation=AboutUsTranslation::where('about_id',1)->orderBy('id','asc')->get();
+        return view('admin.about',compact('about','about_translation'));
+        
+        
     }
 
     /**
@@ -44,8 +47,17 @@ class AboutUsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    
     {
-        //
+    // $about=AboutUsPage::updateOrCreate(['id'=>1],[]);;     
+       //dd($request);  
+
+        foreach($request['content'] as $lang => $content) { 
+            $translation = AboutUsTranslation::updateOrCreate(['locale'=>$lang],['content'=>$content,'locale'=>$lang]); 
+        }
+        Session::flash('message','Informatia a fost salvata cu success');
+        return redirect()->back();
+
     }
 
     /**
@@ -67,7 +79,7 @@ class AboutUsController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**

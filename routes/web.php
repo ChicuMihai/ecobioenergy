@@ -15,22 +15,21 @@
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::get('/about','HomeController@about')->name('about');
 Route::get('/lang/{lang}','LanguageController@switchLang');
 
 Route::get('/','FrontController@index');
-Route::get('/about', 'FrontController@about')->name('about');
 Route::get('/portfolio', 'FrontController@portfolio')->name('portfolio');
 Route::get('/contact', 'FrontController@contact')->name('contact');
 Route::get('/calcKcal', 'FrontController@calckcal')->name('calcKcal');
 Route::get('/order', 'FrontController@order')->name('order');
-Route::get('/productinfo','FrontController@productinfo')->name('productinfo');
+ Route::get('/productinfo/{id}','FrontController@productinfo');
+// Route::get('/productinfo','FrontController@productinfo');
 
 Route::group(['middleware' => ['auth']], function () {
  Route::get('/admin','AdminHomeController@index');
  Route::get('/contact_edit','AdminHomeController@contact')->name('contact_edit');
  Route::post('/contact_edit','AdminHomeController@store')->name('contact_store');
- Route::resource('/aboutedit','AboutUsController');
+ Route::resource('/about','AboutUsController');
  Route::resource('/carousel','CarouselController');
  Route::resource('/product','ProductController');
 });

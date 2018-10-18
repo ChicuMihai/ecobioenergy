@@ -14,7 +14,7 @@
     
                         </div>
                         <div class="ibox-content">
-                        <form method="POST" action="{{route('contact_store')}}" accept-charset="UTF-8">
+                        <form method="POST" action="{{route('contact_store')}}" accept-charset="UTF-8" name="register" novalidate onsubmit=" return validateForm()">
                             {{ csrf_field() }}
                             @if(session()->has('message'))
                             <div class="alert alert-success"> 
@@ -23,20 +23,20 @@
                             @endif
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Adresa</label>
     
-                                <div class="col-lg-10"><input type="text" placeholder="Adresa" class="form-control" name="adress"></div>
+                            <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->adresa : 'Adresa'}}" class="form-control" name="adress"></div>
                             </div>
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Telefon</label>
     
-                                <div class="col-lg-10"><input type="text" placeholder="Telefon" class="form-control" name="phone"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->telefon : 'Telefon'}}" class="form-control" name="phone"></div>
                             </div>
                             
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Email</label>
     
-                                <div class="col-lg-10"><input type="text" placeholder="Email" class="form-control" name="email"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->email : 'Email'}}" class="form-control" name="email"></div>
                             </div>
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Mobil</label>
     
-                                <div class="col-lg-10"><input type="text" placeholder="Mobil" class="form-control" name="mobile"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->mobil : 'Mobil'}}" class="form-control" name="mobile"></div>
                             </div>
                               
                             <div class="form-group row">
@@ -51,6 +51,25 @@
             </div>
         </div>
     </div>
+    <script>
+    function validateForm()
+{
+  var fields = ["adress","phone", "email","mobile"]
+
+  var i, l = fields.length;
+  var fieldname;
+  for (i = 0; i < l; i++) {
+    fieldname = fields[i];
+    if (document.forms["register"][fieldname].value === "") {
+      alert(fieldname + " can not be empty");
+      return false;
+    }
+  }
+  return true;
+}
+            
+         
+   </script>
 @endsection
 
 

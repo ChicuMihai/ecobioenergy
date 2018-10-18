@@ -15,7 +15,10 @@ Despre noi
 				</div>
 			</div>
 		</section>
-		<section class="green_solar">
+		<section><div clas="row">{!!$about->lang->content!!}</div></section>
+			
+	
+		{{-- <section class="green_solar">
 			<div class="row">
 				<div class="large-12 columns  wd-title-section_c">
 					<h2>We Are Green Solar</h2>
@@ -55,7 +58,7 @@ Despre noi
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 
 
 @endsection

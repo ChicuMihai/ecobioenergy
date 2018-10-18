@@ -13,7 +13,7 @@
            
             @foreach($products as $product)
             <tr>
-            <td class="project-title"><a href="">{{$product->id}}</a></td>
+            <td class="project-title"><a href="">{{$product->lang->title}}</a></td>
                 <td class="project-actions">  
                 
                 <form action="{{route('product.destroy',$product->id)}}" method="POST">
