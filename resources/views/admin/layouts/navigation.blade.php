@@ -6,7 +6,7 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Admin</strong><b class="caret"></b>
+                                <strong class="font-bold">Admin</strong>
                             </span>
                         </span>
                     </a>
@@ -38,6 +38,9 @@
 
             <li>
                 <a href="{{ route('about.create') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Despre Noi</span></a>
+            </li>
+            <li>
+                <a href="{{ route('about.create') }}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Comenzi</span></a>
             </li>
             <li>
                     <a href="{{ route('contact_edit') }}"><i class="fa fa-address-card-o"></i> <span class="nav-label">Informatii de contact</span></a>

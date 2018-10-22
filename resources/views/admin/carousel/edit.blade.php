@@ -18,7 +18,7 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif
+    @endif
     @if(session()->has('message'))
     <div class="alert alert-success"> 
     {!! session('message') !!}
@@ -56,10 +56,9 @@
                     <div class="panel-body">
                         <div class="tab-content">
                             @foreach($carousel_translation as $translation)
-                        <div id="tab-{{$translation->locale}}" class="tab-pane">
-                           
-                            <textarea class="form-control" name="content[{{$translation->id}}]" id="content"{!!$translation->content!!}</textarea>
-                          </div>
+                        <div id="tab-{{$translation->locale}}" class="tab-pane"> 
+                            <textarea class="form-control" name="content[{{$translation->id}}]" id="content">{{$translation->content}}</textarea>
+                        </div>
                           @endforeach
                     
                        </div>

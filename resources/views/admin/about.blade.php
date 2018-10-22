@@ -25,7 +25,11 @@
 </div>
 
 <div class="wrapper wrapper-content">
-
+    @if(session()->has('message'))
+    <div class="alert alert-success"> 
+    {!! session('message') !!}
+    </div>
+    @endif
 
   <div class="panel-heading">
       <ul class="nav nav-tabs">

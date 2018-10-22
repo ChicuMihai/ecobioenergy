@@ -49,8 +49,7 @@ class AboutUsController extends Controller
     public function store(Request $request)
     
     {
-    // $about=AboutUsPage::updateOrCreate(['id'=>1],[]);;     
-       //dd($request);  
+
 
         foreach($request['content'] as $lang => $content) { 
             $translation = AboutUsTranslation::updateOrCreate(['locale'=>$lang],['content'=>$content,'locale'=>$lang]); 

@@ -24,6 +24,7 @@ Route::get('/calcKcal', 'FrontController@calckcal')->name('calcKcal');
 Route::get('/order', 'FrontController@order')->name('order');
  Route::get('/productinfo/{id}','FrontController@productinfo');
 // Route::get('/productinfo','FrontController@productinfo');
+Route::resource('order','OrderController');
 
 Route::group(['middleware' => ['auth']], function () {
  Route::get('/admin','AdminHomeController@index');

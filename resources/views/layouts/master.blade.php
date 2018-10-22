@@ -68,30 +68,23 @@
 			
 			<div class="show-for-large-up triongle"></div>
 			<div class="show-for-large-up wd-menu3-social">
-				<ul class="social-icons inline-list">
-					<li>
-                    <a href="{{url('lang/ro')}}">
-                    <img src="{{asset('images/language/rom.png')}}"></a>
-					</li>
-					<li>
+			<div class="dropdown">
+			<button class="dropbtn"><img src="images/language/{{Config::get('app.locale')}}.png"></button>
+  			<div class="dropdown-content">
+			  <a href="{{url('lang/ro')}}">
+                    <img src="images/language/ro.png"></a>
                     <a href="{{url('lang/ru')}}">
-                    <img src="{{asset('images/language/rus.png')}}"></a>
-					</li>
-					<li >
+                    <img src="images/language/ru.png"></a>
 					<a href="{{url('lang/en')}}">
-                    <img src="{{asset('images/language/uk.png')}}"></a>
-					</li>
-                    <li >
+                    <img src="images/language/en.png"></a>
 					<a href="{{url('lang/it')}}">
-                    <img src="{{asset('images/language/it.png')}}"></a>
-					</li>
-                    <li >
+                    <img src="images/language/it.png"></a>
 					<a href="{{url('lang/de')}}">
-                    <img src="{{asset('images/language/de.png')}}"></a>
-					</li>
-				</ul>
+                    <img src="images/language/de.png"></a>
+					
+  			</div>
 			</div>
-
+			</div>
 		</header>
 
 
