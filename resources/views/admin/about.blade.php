@@ -30,7 +30,55 @@
     {!! session('message') !!}
     </div>
     @endif
-
+    @if(empty($about))
+    <div role="tabpanel" id="tab-2" class="tab-pane">
+      <div class="panel-body">
+          <form action="{{route('about.store')}}" method="POST">
+              {{ csrf_field() }}
+              
+              <div class="panel-heading">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tab-RO">RO</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-RU">RU</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-EN">EN</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-DE">DE</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-IT">IT</a></li>
+                      </ul>
+                    </div>
+                  </div>
+               
+                  <div class="panel-body">
+                    <div class="tab-content">
+                      <div id="tab-RO" class="tab-pane active">
+                        <textarea class="form-control my-editor" name="content[ro]" id="content"></textarea>
+                
+                      </div>
+                
+                      <div id="tab-RU" class="tab-pane">
+                       <textarea class="form-control my-editor" name="content[ru]" id="content"></textarea>
+                
+                     </div>
+                
+                     <div id="tab-EN" class="tab-pane">
+                       <textarea class="form-control my-editor" name="content[en]" id="content"></textarea>
+                
+                     </div>
+                
+                     <div id="tab-DE" class="tab-pane">
+                      <textarea class="form-control my-editor" name="content[de]" id="content"></textarea>
+                    </div>
+                
+                    <div id="tab-IT" class="tab-pane">
+                     <textarea class="form-control my-editor" name="content[it]" id="content"></textarea>
+                
+                   </div>
+                 </div>
+      </div>
+      <button class="btn btn-primary"type="submit">Salveaza</button>
+    </form>
+  </div>
+  
+@else
   <div class="panel-heading">
       <ul class="nav nav-tabs">
       @foreach($about_translation as $translation)
@@ -38,10 +86,6 @@
         @endforeach
       </ul>
     </div>
-  </div>
-
-
-
 <form action="{{route('about.store')}}" method="POST">
   {{ csrf_field() }}
   
@@ -56,13 +100,10 @@
 
      
    </div>
+   <button class="btn btn-primary" type="submit">Salveaza</button>
   </div>
-
- 
- <div class="clear"></div>
- <button class="btn btn-primary" type="submit">Salveaza</button>
 </form>
 </div>
-
+@endif
 
 @endsection

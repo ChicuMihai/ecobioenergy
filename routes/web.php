@@ -25,12 +25,12 @@ Route::get('/order', 'FrontController@order')->name('order');
  Route::get('/productinfo/{id}','FrontController@productinfo');
 // Route::get('/productinfo','FrontController@productinfo');
 Route::resource('order','OrderController');
-
+Route::resource('/about','AboutUsController');
 Route::group(['middleware' => ['auth']], function () {
  Route::get('/admin','AdminHomeController@index');
  Route::get('/contact_edit','AdminHomeController@contact')->name('contact_edit');
  Route::post('/contact_edit','AdminHomeController@store')->name('contact_store');
- Route::resource('/about','AboutUsController');
+ 
  Route::resource('/carousel','CarouselController');
  Route::resource('/product','ProductController');
 });

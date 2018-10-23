@@ -23,20 +23,20 @@
                             @endif
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Adresa</label>
     
-                            <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->adresa : 'Adresa'}}" class="form-control" name="adress"></div>
+                            <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->adresa :''}}" placeholder="Adresa" class="form-control" name="adress"></div>
                             </div>
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Telefon</label>
     
-                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->telefon : 'Telefon'}}" class="form-control" name="phone"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->telefon :''}}" placeholder="Telefon'}}" class="form-control" name="phone"></div>
                             </div>
                             
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Email</label>
     
-                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->email : 'Email'}}" class="form-control" name="email"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->email :''}}" placeholder="Email}" class="form-control" name="email"></div>
                             </div>
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Mobil</label>
     
-                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->mobil : 'Mobil'}}" class="form-control" name="mobile"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->mobil : ''}}" placeholder="Mobil" class="form-control" name="mobile"></div>
                             </div>
                               
                             <div class="form-group row">
