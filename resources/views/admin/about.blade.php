@@ -38,11 +38,11 @@
               
               <div class="panel-heading">
                       <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#tab-RO">RO</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab-RU">RU</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab-EN">EN</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab-DE">DE</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab-IT">IT</a></li>
+                        <li class="active"><a data-toggle="tab" href="#tab-RO">ro</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-RU">ru</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-EN">en</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-DE">de</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab-IT">it</a></li>
                       </ul>
                     </div>
                   </div>

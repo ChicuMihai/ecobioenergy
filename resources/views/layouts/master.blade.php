@@ -120,13 +120,13 @@
 
 								<ul>
 									<li>
-									<span><span>Phone:</span><a href="tel:{{$info->telefon}}">{{$info->telefon}}</a></span>
+									<span><span>Phone:</span><a href="tel:{{isset($info)? $info->telefon:''}}">{{isset($info)? $info->telefon:''}}</a></span>
 									</li>
 									<li>
-									<span><span>Email:</span> <a href="mailto:{{$info->email}}"><span>{{$info->email}}</span></a></span>
+									<span><span>Email:</span> <a href="mailto:{{isset($info)? $info->email:''}}"><span>{{isset($info)? $info->email:''}}</span></a></span>
 									</li>
 									<li>
-									<span><span>Adress:</span>{{$info->adresa}}</span>
+									<span><span>Adress:</span>{{isset($info)? $info->adress:''}}</span>
 									</li>
 								</ul>
 							</section>
