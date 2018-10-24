@@ -32,7 +32,7 @@
                             
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Email</label>
     
-                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->email :''}}" placeholder="Email}" class="form-control" name="email"></div>
+                                <div class="col-lg-10"><input type="text" value="{{isset($info) ? $info->email :''}}" placeholder="Email" class="form-control" name="email"></div>
                             </div>
                             <div class="form-group row"><label class="col-lg-2 col-form-label">Mobil</label>
     

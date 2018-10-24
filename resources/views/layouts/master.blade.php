@@ -55,7 +55,7 @@
 									<a href="{{url('/calcKcal') }}">{{ __('home.calc') }}</a>
 								</li>
 								<li id="menu-item-721" class="{{Request::path() == 'order' ? 'active_menu' : '' }}">
-									<a href="{{url('/order') }}">{{ __('home.order') }}</a>
+									<a href="{{route('order.create') }}">{{ __('home.order') }}</a>
 								</li>
 								<li id="menu-item-13" class="{{Request::path() == 'contact' ? 'active_menu' : '' }}">
 									<a href="{{url('/contact') }}" class="has-icon">{{ __('home.contact') }}</a>
@@ -69,18 +69,15 @@
 			<div class="show-for-large-up triongle"></div>
 			<div class="show-for-large-up wd-menu3-social">
 			<div class="dropdown">
-			<button class="dropbtn"><img src="images/language/{{Config::get('app.locale')}}.png"></button>
+			
+			<button class="dropbtn"><img src="{{asset('images/language/'.Config::get('app.locale').'.png')}}"></button>
   			<div class="dropdown-content">
-			  <a href="{{url('lang/ro')}}">
-                    <img src="images/language/ro.png"></a>
-                    <a href="{{url('lang/ru')}}">
-                    <img src="images/language/ru.png"></a>
-					<a href="{{url('lang/en')}}">
-                    <img src="images/language/en.png"></a>
-					<a href="{{url('lang/it')}}">
-                    <img src="images/language/it.png"></a>
-					<a href="{{url('lang/de')}}">
-                    <img src="images/language/de.png"></a>
+			@foreach (Config::get('languages') as $lang => $language)
+			@if ($lang != App::getLocale())
+			  <a href="{{url('lang/'.$lang)}}">
+					<img src="{{asset('images/language/'.$lang.'.png')}}">{{$language}}</a>
+			@endif
+			@endforeach
 					
   			</div>
 			</div>
@@ -126,7 +123,7 @@
 									<span><span>Email:</span> <a href="mailto:{{isset($info)? $info->email:''}}"><span>{{isset($info)? $info->email:''}}</span></a></span>
 									</li>
 									<li>
-									<span><span>Adress:</span>{{isset($info)? $info->adress:''}}</span>
+									<span><span>Adress:</span>{{isset($info)? $info->adresa:''}}</span>
 									</li>
 								</ul>
 							</section>
