@@ -130,7 +130,7 @@
                     <div class="tab-content">
                         @foreach($about_translation as $translation)
                     <div id="tab-{{$translation->locale}}" class="tab-pane"> 
-                        <textarea class="form-control my-editor" name="content[{{$translation->locale}}]" id="content">{!!$translation->content !!}</textarea>
+                        <textarea class="form-control my-editor" name="content[{{$translation->locale}}]" id="content">{{$translation->content }}</textarea>
                     </div>
                       @endforeach
                 

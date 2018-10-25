@@ -15,7 +15,7 @@ Despre noi
 				</div>
 			</div>
 		</section>
-		<section><div class="row">{!!isset($about)?$about->lang->content:''!!}</div></section>
+		<section><div class="row"><img src="{{asset('images/about/'.$about->imagine)}}" alt=""></div><div class="row">{!!isset($about)?$about->lang->content:''!!}</div></section>
 			
 	
 		{{-- <section class="green_solar">

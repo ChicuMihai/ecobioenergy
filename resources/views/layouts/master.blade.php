@@ -54,7 +54,7 @@
 								<li id="menu-item-721" class="{{Request::path() == 'calcKcal' ? 'active_menu' : '' }}">
 									<a href="{{url('/calcKcal') }}">{{ __('home.calc') }}</a>
 								</li>
-								<li id="menu-item-721" class="{{Request::path() == 'order' ? 'active_menu' : '' }}">
+								<li id="menu-item-721" class="{{Request::path() == 'order/create' ? 'active_menu' : '' }}">
 									<a href="{{route('order.create') }}">{{ __('home.order') }}</a>
 								</li>
 								<li id="menu-item-13" class="{{Request::path() == 'contact' ? 'active_menu' : '' }}">
@@ -100,7 +100,7 @@
 					<li>
 						<div class="textwidget">
 							<div class="widget-logo">
-								<img alt="logo" src="{{asset('images/logo-solar-blann.png')}}">
+								<h2>ECOBIOENERGY</h2>
 							<p>{{__('home.home_info')}}</p>
 								
 							</div>
@@ -162,6 +162,8 @@
 
 			</div>
 		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/calculator.js"></script>
 
 		<script src="js/jquery.js"></script>
 		<script src="js/plugins.js"></script>
