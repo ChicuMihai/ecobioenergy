@@ -18,7 +18,7 @@ class CreateAboutUsTranslationsTable extends Migration
             $table->string('locale')->index();
             $table->integer('about_id')->unsigned();
             $table->unique(['about_id', 'locale']);
-            $table->text('content');
+            $table->text('content')->nullable();
         });
     }
 

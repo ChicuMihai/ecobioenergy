@@ -17,6 +17,7 @@ class CreateAboutUsPagesTable extends Migration
        
         Schema::create('about_us_pages', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('imagine');
             $table->timestamps();
         });
     }

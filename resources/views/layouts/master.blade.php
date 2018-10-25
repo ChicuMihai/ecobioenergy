@@ -45,7 +45,7 @@
 								</li>
 
 								<li id="menu-item-656" class="{{Request::path() == 'about' ? 'active_menu' : '' }}" >
-									<a href="{{url('/about') }}" >{{ __('home.about') }}</a>
+									<a href="{{route('about.index') }}" >{{ __('home.about') }}</a>
 								</li>
 
 								<li id="menu-item-721" class="{{Request::path() == 'portfolio' ? 'active_menu' : '' }}" >
@@ -101,9 +101,8 @@
 						<div class="textwidget">
 							<div class="widget-logo">
 								<img alt="logo" src="{{asset('images/logo-solar-blann.png')}}">
-								<p>The solar is the leader of green energy in the country sed diam nonumy eirmod tempor invidunt ut labore
-									and efficient strategy.</p>
-								<p>We provide the energy to medium and big company, sadipscing elitr, sed diam nonumy.</p>
+							<p>{{__('home.home_info')}}</p>
+								
 							</div>
 						</div>
 					</li>

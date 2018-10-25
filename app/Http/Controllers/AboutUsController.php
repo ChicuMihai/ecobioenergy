@@ -33,8 +33,9 @@ class AboutUsController extends Controller
      */
     public function create(Request $request)
     {
+        
         $about=AboutUsPage::first();
-        $about_translation=AboutUsTranslation::where('about_id',1)->orderBy('id','asc')->get();
+        $about_translation=AboutUsTranslation::orderBy('id','asc')->get();
         return view('admin.about',compact('about','about_translation'));
         
         
@@ -47,12 +48,16 @@ class AboutUsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    
     {
-
-
+        if(request()->hasFile('img')){
+        $image = request()->file('img');
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+        $destinationPath = public_path('/images/about');
+        $image->move($destinationPath, $filename);
+        $about = AboutUsPage::updateOrCreate(['id'=>'1'],['imagine'=>$filename]);
+        } 
         foreach($request['content'] as $lang => $content) { 
-            $translation = AboutUsTranslation::updateOrCreate(['locale'=>$lang],['content'=>$content,'locale'=>$lang]); 
+            $translation = AboutUsTranslation::updateOrCreate(['locale'=>$lang],['content'=>$content,'about_id'=>'1','locale'=>$lang]); 
         }
         Session::flash('message','Informatia a fost salvata cu success');
         return redirect()->back();

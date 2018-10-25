@@ -13,9 +13,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['index']]);
+    }
+
     public function index()
     {
         
+
     }
     /**
      * Show the form for creating a new resource.

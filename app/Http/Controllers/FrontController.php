@@ -14,10 +14,7 @@ class FrontController extends Controller
         $products=Product::latest()->paginate(3);
         return view('index',compact('carousel','products'));
     }
-    public function about (){
-        /* functie pentru baza de data */
-    return view('/pages/aboutus' /* ,compact('variabila fara $' ,' alta variabila dac trebuie') */);
-    }
+    
 
     public function portfolio(){
         $products=Product::get()->all();

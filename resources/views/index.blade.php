@@ -27,8 +27,8 @@ Ecobioenergy
 		<section class="provide">
 			<div class="row">
 				<div class="large-12 columns clearfix  wd-title-section_c">
-					<h2>We Provide Energy</h2>
-					<h5> To mACany clients like government, homes and offices</h5>
+					<h2>{{ __('home.home_title') }}</h2>
+					<h5> {{ __('home.home_info') }}</h5>
 
 				</div>
 				@foreach($products as $product)
